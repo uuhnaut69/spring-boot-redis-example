@@ -8,7 +8,7 @@ local fromBalance = tonumber(redis.call("HGET", fromCustomerId, balanceField))
 local toBalance = tonumber(redis.call("HGET", toCustomerId, balanceField))
 local amount = tonumber(ARGV[1])
 
-if fromBalance >= amount then
+if fromBalance ~= nil and toBalance ~= nil and (fromBalance >= amount) then
     redis.call("HSET", fromCustomerId, balanceField, fromBalance - amount)
     redis.call("HSET", toCustomerId, balanceField, toBalance + amount)
     return true
