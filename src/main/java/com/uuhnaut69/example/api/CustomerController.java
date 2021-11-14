@@ -25,9 +25,10 @@ public class CustomerController {
 
   @PostMapping("/transfer-money")
   @ResponseStatus(HttpStatus.CREATED)
-  @Operation(summary = "Transfer money from customer to customer")
+  @Operation(
+      summary = "Transfer money from customer to customer using Redis Transaction Lua Script")
   public boolean transferMoney(@RequestBody @Valid TransferMoneyDTO transferMoneyDTO) {
-    return customerService.transferMoney(transferMoneyDTO);
+    return customerService.transferMoneyUsingRedisLuaScript(transferMoneyDTO);
   }
 
   @DeleteMapping("/clear")

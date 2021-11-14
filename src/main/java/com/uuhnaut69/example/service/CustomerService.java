@@ -51,7 +51,7 @@ public class CustomerService {
             });
   }
 
-  public boolean transferMoney(TransferMoneyDTO transferMoneyDTO) {
+  public boolean transferMoneyUsingRedisLuaScript(TransferMoneyDTO transferMoneyDTO) {
     return Boolean.TRUE.equals(
         redisTemplate.execute(
             moneyTransferScript,
