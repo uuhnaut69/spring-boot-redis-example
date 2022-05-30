@@ -17,7 +17,7 @@
         <java.version>11</java.version>
         <jnanoid.version>2.0.0</jnanoid.version>
         <java-faker.version>1.0.2</java-faker.version>
-        <spring-doc.version>1.6.8</spring-doc.version>
+        <spring-doc.version>1.6.9</spring-doc.version>
         <redisson-spring.version>3.17.3</redisson-spring.version>
     </properties>
     <dependencies>
